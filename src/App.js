@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import NavBar from "./components/NavBar";
+import Home from "./components/Home";
+import AboutMe from "./components/AboutMe";
+import Resume from "./components/Resume";
+import "./App.css";
 
 function App() {
+  const [pageNum, setPageNum] = useState(1);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar setPageNum={setPageNum} />
+      <Home pageHidden={pageNum === 1} />
+      <AboutMe pageHidden={pageNum === 2} />
+      <Resume pageHidden={pageNum === 3} />
     </div>
   );
 }
