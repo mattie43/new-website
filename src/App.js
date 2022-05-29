@@ -5,7 +5,7 @@ import AboutMe from "./components/AboutMe";
 import Resume from "./components/Resume";
 import "./App.css";
 
-function App() {
+export default function App() {
   const [pageNum, setPageNum] = useState(1);
 
   return (
@@ -17,5 +17,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

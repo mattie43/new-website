@@ -7,80 +7,55 @@ import {
 } from "react-icons/fa";
 import { BsHouseFill, BsEmojiSunglasses } from "react-icons/bs";
 
+const iconList = [
+  BsHouseFill,
+  BsEmojiSunglasses,
+  FaRegNewspaper,
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaEnvelope,
+];
+const colorList = [
+  "rgb(133, 94, 66)",
+  "rgb(224, 172, 105)",
+  "rgb(203,96,21)",
+  "rgb(79, 84, 90)",
+  "rgb(45, 114, 186)",
+  "rgb(80, 144, 254)",
+  "rgb(217, 33, 33)",
+];
+const iconNames = [
+  "Home",
+  "About Me",
+  "Resume",
+  "Github",
+  "LinkedIn",
+  "Twitter",
+  "E-mail",
+];
+
+function getIcons(setPageNum) {
+  return iconList.map((Ele, i) => {
+    return (
+      <div
+        onClick={() => setPageNum(i + 1)}
+        style={{ color: colorList[i] }}
+        key={Ele}
+      >
+        <div className="icon-container">
+          <Ele
+            size="35"
+            className="icon"
+            style={{ backgroundColor: colorList[i] }}
+          />
+        </div>
+        {iconNames[i]}
+      </div>
+    );
+  });
+}
+
 export default function NavBar(props) {
-  const iconSize = "35";
-  return (
-    <div className="navbar-container">
-      <div onClick={() => props.setPageNum(1)}>
-        <div>
-          <BsHouseFill
-            size={iconSize}
-            className="icon"
-            style={{ "background-color": "rgb(133, 94, 66)", color: "white" }}
-          />
-        </div>
-        Home
-      </div>
-      <div onClick={() => props.setPageNum(2)}>
-        <div>
-          <BsEmojiSunglasses
-            size={iconSize}
-            className="icon"
-            style={{ "background-color": "rgb(224, 172, 105)", color: "white" }}
-          />
-        </div>
-        About Me
-      </div>
-      <div onClick={() => props.setPageNum(3)}>
-        <div>
-          <FaRegNewspaper
-            size={iconSize}
-            className="icon"
-            style={{ "background-color": "rgb(128, 64, 0)", color: "white" }}
-          />
-        </div>
-        Resume
-      </div>
-      <div>
-        <div>
-          <FaGithub
-            size={iconSize}
-            className="icon"
-            style={{ "background-color": "rgb(79, 84, 90)", color: "white" }}
-          />
-        </div>
-        Github
-      </div>
-      <div>
-        <div>
-          <FaLinkedin
-            size={iconSize}
-            className="icon"
-            style={{ "background-color": "rgb(45, 114, 186)", color: "white" }}
-          />
-        </div>
-        LinkeIn
-      </div>
-      <div>
-        <div>
-          <FaTwitter
-            size={iconSize}
-            className="icon"
-            style={{ "background-color": "rgb(80, 144, 254)", color: "white" }}
-          />
-        </div>
-        Twitter
-      </div>
-      <div>
-        <div>
-          <FaEnvelope
-            size={iconSize}
-            className="icon"
-            style={{ "background-color": "rgb(217, 33, 33)", color: "white" }}
-          />
-        </div>
-        E-Mail
-      </div>
-    </div>
-  );
+  return <div className="navbar-container">{getIcons(props.setPageNum)}</div>;
 }
