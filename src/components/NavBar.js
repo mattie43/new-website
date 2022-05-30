@@ -1,39 +1,9 @@
-import {
-  FaRegNewspaper,
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaEnvelope,
-} from "react-icons/fa";
-import { BsHouseFill, BsEmojiSunglasses } from "react-icons/bs";
+import { FaRegNewspaper, FaProjectDiagram } from "react-icons/fa";
+import { BsHouseFill } from "react-icons/bs";
 
-const iconList = [
-  BsHouseFill,
-  BsEmojiSunglasses,
-  FaRegNewspaper,
-  FaGithub,
-  FaLinkedin,
-  FaTwitter,
-  FaEnvelope,
-];
-const colorList = [
-  "rgb(133, 94, 66)",
-  "rgb(224, 172, 105)",
-  "rgb(203,96,21)",
-  "rgb(79, 84, 90)",
-  "rgb(45, 114, 186)",
-  "rgb(80, 144, 254)",
-  "rgb(217, 33, 33)",
-];
-const iconNames = [
-  "Home",
-  "About Me",
-  "Resume",
-  "Github",
-  "LinkedIn",
-  "Twitter",
-  "E-mail",
-];
+const iconList = [BsHouseFill, FaRegNewspaper, FaProjectDiagram];
+const colorList = ["#5e8be6", "#bd5815", "#228b22"];
+const iconNames = ["Home", "Resume", "Projects"];
 
 function getIcons(setPageNum) {
   return iconList.map((Ele, i) => {

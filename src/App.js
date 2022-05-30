@@ -1,8 +1,9 @@
 import { useState } from "react";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-import AboutMe from "./components/AboutMe";
 import Resume from "./components/Resume";
+import Projects from "./components/Projects";
+import Footer from "./components/Footer";
 import "./App.css";
 
 export default function App() {
@@ -12,8 +13,9 @@ export default function App() {
     <div className="App">
       <NavBar setPageNum={setPageNum} />
       <Home pageHidden={pageNum === 1} />
-      <AboutMe pageHidden={pageNum === 2} />
-      <Resume pageHidden={pageNum === 3} />
+      <Resume pageHidden={pageNum === 2} />
+      <Projects pageHidden={pageNum === 3} />
+      <Footer />
     </div>
   );
 }
